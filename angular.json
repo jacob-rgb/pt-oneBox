@@ -49,6 +49,13 @@
                   "maximumError": "4kb"
                 }
               ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "baseHref": "http://localhost:80",
               "outputHashing": "all"
             },
             "development": {
@@ -57,7 +64,8 @@
               "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
-              "namedChunks": true
+              "namedChunks": true,
+              "baseHref": "http://localhost:4200"
             }
           },
           "defaultConfiguration": "production"

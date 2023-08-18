@@ -26,3 +26,17 @@ a {
     filter: brightness(1.2);
   }
 }
+
+.fadeIn {
+  opacity: 0;
+  animation: fadeIn .6 ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  form {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
