@@ -1,0 +1,25 @@
+<div class="detail__container">
+  <div class="detail__header">
+    <p class="detail__header__title">{{ (selectedEvent | async)?.event?.title }} {{ (selectedEvent | async)?.event?.subtitle }}</p>
+    <a [routerLink]="'/events'">
+      Volver
+    </a>
+  </div>
+  <div class="detail__void" *ngIf="!(selectedEvent | async); else detail">
+    <fa-icon [icon]="warningIcon"></fa-icon>
+    <p>Vaya ! Parece que no se ha podido encontrar información a cerca de este evento. Comprueba tu conexión e intenta acceder de nuevo en unos minutos. Si el problema persiste contacte con el administrador.</p>
+  </div>
+  <ng-template #detail>
+    <div class="detail__body">
+      <section class="detail__body__sessions">
+        <app-session-item
+          *ngFor="let session of (selectedEvent | async)?.sessions! | dateSort:'date':true"
+          [sessionInfo]="session"
+        ></app-session-item>
+      </section>
+      <section class="detail__body__shopping-cart">
+        <app-shopping-cart></app-shopping-cart>
+      </section>
+    </div>
+  </ng-template>
+</div>

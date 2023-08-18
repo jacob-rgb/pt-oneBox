@@ -1,0 +1,14 @@
+<div class="session__container">
+  <div class="session__info">
+    <p>
+      Fecha: {{ sessionInfo.date | date:'dd/MM/yyyy'}}, Disponibilidad {{ sessionInfo.availability }}
+    </p>
+  </div>
+  <div class="session__actions">
+    <button (click)="decreaseCount()">-</button>
+    <div class="session__actions__count">
+      {{ count }}
+    </div>
+    <button (click)="increaseCount()" >+</button>
+  </div>
+</div>

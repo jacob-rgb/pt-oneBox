@@ -1,0 +1,31 @@
+
+<div class="card__container">
+  <div class="card__header">
+    <h3 class="card__header__title">{{ eventInfo.title }}</h3>
+    <p class="card__header__subtitle">{{ eventInfo.subtitle }}</p>
+  </div>
+  <div class="card__body">
+    <figure class="card__body__img">
+      <img src="{{ eventInfo.image }}" alt="{{ eventInfo.subtitle }}">
+    </figure>
+    <div class="card__body__place">
+      <fa-icon [icon]="locationIcon"></fa-icon>
+      <span>{{ eventInfo.place }}</span>
+    </div>
+    <time class="card__body__date">
+      <fa-icon [icon]="timeIcon"></fa-icon>
+      <span>
+        {{eventInfo.startDate | date:'dd/MM/yyyy'}} - {{eventInfo.endDate | date:'dd/MM/yyyy'}}
+      </span>
+    </time>
+    <p class="card__body__description" [innerHtml]="eventInfo.description" ></p>
+  </div>
+  <div class="card__footer">
+    <a
+      class="card__footer__button"
+      routerLink="/events/{{eventInfo.id}}"
+    >
+      Comprar
+    </a>
+  </div>
+</div>

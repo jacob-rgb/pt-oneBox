@@ -1,0 +1,35 @@
+<div class="cart__container">
+  <div class="cart__title">
+    <span>Tu cesta</span>
+    <fa-icon [icon]="shoppingCartIcon"></fa-icon>
+  </div>
+  <div class="cart__item__void" *ngIf="!(cart | async).length; else items">
+    <p>Añade una nueva reserva y disfruta de tu evento !</p>
+  </div>
+  <ng-template #items>
+    <div class="cart__item" *ngFor="let item of cart | async" >
+      <p class="cart__item__title">
+          {{ item.title }}
+      </p>
+      <div class="cart__item__sessions">
+        <div class="cart__item__sessions__element" *ngFor="let session of item.sessions">
+          <time>{{ session.date | date:'dd/MM/yyyy'}}</time>
+          <div class="cart__item__sessions__element__amount">
+            <span>X {{ session.amount }}</span>
+            <button
+              class="cart__item_sessions__element__amount__delete"
+              (click)="removeElement(session)"
+            >
+              <fa-icon [icon]="trashIcon"></fa-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  <div class="cart__footer">
+    <button *ngIf="(cart|async).length">
+      COMPRAR AHORA
+    </button>
+  </div>
+</div>

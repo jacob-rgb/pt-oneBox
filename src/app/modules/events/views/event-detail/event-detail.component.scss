@@ -1,0 +1,63 @@
+::ng-deep {
+  app-event-detail {
+    width: 100%;
+  }
+}
+
+.detail {
+  &__container {
+    width: 100%;
+    padding: .8em;
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    &__title {
+      font-size: 1.2rem;
+    }
+    a {
+      color: var(--primary-color);
+      font-size: 1rem;
+    }
+  }
+
+  &__void {
+    width: 100%;
+    text-align: center;
+    ::ng-deep {
+      fa-icon {
+        font-size: 2rem;
+        color: var(--warning-color);
+      }
+    }
+  }
+
+  &__body {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    > section {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      flex-basis: 45%;
+    }
+    &__sessions {
+      padding: 1.2rem;
+      border: 1px solid lightgray;
+      gap: 1rem;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .detail__header__title {
+    font-size: .9rem;
+  }
+}

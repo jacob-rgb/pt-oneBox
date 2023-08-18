@@ -1,0 +1,27 @@
+.session {
+  &__container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  &__info {
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 400px;
+  }
+  &__actions {
+    display: flex;
+    flex-grow: 1;
+    gap: 6px;
+    align-items: center;
+    font-size: 1rem;
+    button {
+      background-color: transparent;
+      color: var(--primary-color-active);
+      font-weight: 600;
+      cursor: pointer;
+      padding: .2rem;
+      font-size: 1.2rem;
+    }
+  }
+}

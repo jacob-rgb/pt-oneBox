@@ -1,0 +1,70 @@
+
+.cart {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    border: 1px solid lightgray;
+    padding: 1.2rem;
+  }
+  &__title {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: .6rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .4rem;
+    span {
+      border-bottom: 2px solid var(--primary-color);
+    }
+    ::ng-deep fa-icon {
+      color: var(--primary-color);
+    }
+  }
+  &__item {
+    &__title {
+      font-size: 1.4rem;
+      font-weight: 500;
+      margin-bottom: .6rem;
+    }
+    &__sessions {
+      display: flex;
+      flex-direction: column;
+      gap: .4rem;
+      width: 100%;
+      &__element {
+        display: flex;
+        justify-content: space-between;
+        &__amount {
+          display: flex;
+          align-items: center;
+          gap: .6rem;
+          ::ng-deep {
+            fa-icon {
+              color: var(--error-color);
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+  &__footer {
+    button {
+      display: flex;
+      padding: .6rem;
+      width: 100%;
+      background-color: var(--success-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  }
+}

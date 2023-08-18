@@ -1,6 +1,10 @@
 # TicketApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.2.
+Prueba técnica generada con la versión de angular 16.0.2 y la 16.14.2 de node (Instalación)
+
+## Instalation
+
+Para instalar correctamente las dependencias de este proyecto conviene usar la version 16.14.2 de node a través de `npm install`.
 
 ## Development server
 
