@@ -1,20 +1,19 @@
-FROM node:16-alpine as build-step
-
-RUN mkdir -p /app
+# Base image
+FROM node:16 AS builder
 
 WORKDIR /app
 
-COPY package.json /app
+COPY package*.json ./
 
 RUN npm install
 
-COPY . /app
+COPY . .
 
-RUN npm run build:prod
+RUN npm run build
 
-FROM nginx:1.23.4-alpine
+FROM nginx:latest
 
-COPY --from=build-step /app/dist/ticket-app /usr/share/nginx/html
+COPY --from=builder /app/dist/* /usr/share/nginx/html/
 
 COPY nginx.conf /etc/nginx/nginx.conf
 

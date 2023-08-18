@@ -55,7 +55,6 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "baseHref": "http://localhost:80",
               "outputHashing": "all"
             },
             "development": {
@@ -64,8 +63,7 @@
               "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
-              "namedChunks": true,
-              "baseHref": "http://localhost:4200"
+              "namedChunks": true
             }
           },
           "defaultConfiguration": "production"

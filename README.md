@@ -12,8 +12,8 @@ Para instalar correctamente las dependencias de este proyecto conviene usar la v
 
 Si se dispone de docker instalado en el dispositivo se puede levantar la aplicación siguiendo estos pasos:
 
-1. Crear la imágen de docker con el comando: `docker build -t ticket-app`
-2. Creando y levantando el contenedor con el siguiente comando: `docker run -d -it -p 80:80 ticket-app`
+1. Desde la raiz del proyecto crear la imágen de docker con el comando: `docker build -t ticket-app`
+2. Desde la raiz del proyecto creando y levantando el contenedor con el siguiente comando: `docker run -d -it -p 80:80 ticket-app`
 3. Acceder a la siguiente dirección en el navegador: `http://localhost:80`
 
 ## Development server
